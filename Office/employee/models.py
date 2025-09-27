@@ -37,7 +37,9 @@ class Project(models.Model):
     description = models.TextField()
     start_date = models.DateField(auto_now_add=True)
     end_date = models.DateField(auto_now_add=True)
-
+    
+    def __str__(self):
+        return self.name
 class Employee(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
