@@ -48,9 +48,8 @@ Office Employee Management System with Core Python, Django, and Django REST Fram
     - views.py
 
 11. Add a URL for the View
-   - urls.py
-
-- Then connect your app’s urls.py to the main project’s urls.py:
+    - urls.py
+    - Then connect your app’s urls.py to the main project’s urls.py:
 
 12. Now visit:  http://127.0.0.1:8000/
  ( You’ll see your on web page)
@@ -58,20 +57,20 @@ Office Employee Management System with Core Python, Django, and Django REST Fram
 13. Create Models (Database Tables)
     - models.py
    
-14. Apply Migrations :
+15. Apply Migrations :
     ❯ python manage.py makemigrations
     ❯ python manage.py migrate
       
-15.  Create Admin Superuser
+16.  Create Admin Superuser
     ❯ python manage.py createsuperuser
 
-16.  Register Models in Admin
+17.  Register Models in Admin
     - admins.py
 
-17. Run your server again:
+18. Run your server again:
    ❯ python manage.py runserver
 
-18. Now visit: http://127.0.0.1:8000/admin/
+19. Now visit: http://127.0.0.1:8000/admin/
    - (Login with your superuser credentials.)
 
 19.  Add Templates (HTML Files)
