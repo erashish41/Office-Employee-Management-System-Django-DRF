@@ -1,8 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from employee.models import Company, Employee, Project, Department
+# from django.views.generic import ListView
+from django.urls import reverse_lazy
 
 # Create your views here.
 
-def company(request):
-    return render(request, 'base.html')
+print("employee views loaded 1")
+def companies(request):
+    print("all companies data")
+    companies = Company.objects.all()
+    context = {'companies' : companies}
+    return render(request, "company_list.html", context)
+
+print("employee views loaded 2")

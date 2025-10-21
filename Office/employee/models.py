@@ -1,5 +1,5 @@
 from django.db import models
-
+from utils.models import BaseMixin
 # Create your models here.
 
 COMPANY_TYPE = [
@@ -21,7 +21,7 @@ class Department(models.Model):
     def __str__(self):
         return self.name
     
-class Company(models.Model):
+class Company(BaseMixin):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=200)
     about = models.TextField()
@@ -32,7 +32,7 @@ class Company(models.Model):
     def __str__(self):
         return f"{self.name} {self.company_type}"
     
-class Project(models.Model):
+class Project(BaseMixin):
     name = models.CharField(max_length=100)
     description = models.TextField()
     start_date = models.DateField(auto_now_add=True)
@@ -40,7 +40,7 @@ class Project(models.Model):
     
     def __str__(self):
         return self.name
-class Employee(models.Model):
+class Employee(BaseMixin):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
