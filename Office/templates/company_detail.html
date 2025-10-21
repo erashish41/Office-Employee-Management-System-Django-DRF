@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Company Details {% endblock %}
+{% block content %}
+
+    <div class="container mt-4">
+        {% if company %}
+        <div class="row">
+            <div class="col">
+                <div class="card border shadow" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{company.name}}</h5>
+                        <p class="card-text">Location: {{company.location}}</p>
+                        <p class="card-text">About: {{company.about | truncatewords:3}}</p>
+                        <p class="card-text">Type: {{company.company_type}}</p>
+                        <p class="card-text">Active Status: {{company.active}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <a href="{% url 'company_list' %}" class="btn btn-secondary">Go Back</a>
+        <button type="button" class="">Delete</button>
+    </div>
+
+{% endblock %}

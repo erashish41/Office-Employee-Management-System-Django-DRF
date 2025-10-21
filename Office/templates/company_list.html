@@ -5,9 +5,9 @@
 {% block content %}
 
 <div class="container mt-4">
-    {% if companies %}
+    {% if all_companies %}
         <div class="row">
-        {% for company_info in companies %}
+        {% for company_info in all_companies %}
             <div class="col-md-4">
                 <div class="card p-2 m-3">
                     <div class="card-body border shadow">
@@ -18,12 +18,15 @@
                         <p class="card-text">Added_date: {{ company_info.added_date }}</p>
                         <p class="card-text">Active Status: {{ company_info.active }}</p>
                     </div>
+                    <div class="card-footer">
+                        <a href="{% url 'company_detail' pk=company_info.id %}" class="btn btn-primary">View details</a>
+                    </div>
                 </div>
             </div>
         {% endfor %}
         </div>
     {% else %}
-        <div class="alert alert-info">No companies found. Add one in the admin or via the shell.</div>
+        <div class="alert alert-info">No all_companies found. Add one in the admin or via the shell.</div>
     {% endif %}
 </div>
 
