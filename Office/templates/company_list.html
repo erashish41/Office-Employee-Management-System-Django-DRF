@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Company List{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+    {% if companies %}
+        <div class="row">
+        {% for company_info in companies %}
+            <div class="col-md-4">
+                <div class="card p-2 m-3">
+                    <div class="card-body border shadow">
+                        <h5 class="card-title">Company: {{ company_info.name }}</h5>
+                        <p class="card-text">Location: {{ company_info.location }}</p>
+                        <p class="card-text">About: {{ company_info.about|truncatewords:4 }}</p>
+                        <p class="card-text">Type: {{ company_info.company_type }}</p>
+                        <p class="card-text">Added_date: {{ company_info.added_date }}</p>
+                        <p class="card-text">Active Status: {{ company_info.active }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">No companies found. Add one in the admin or via the shell.</div>
+    {% endif %}
+</div>
+
+{% endblock %}
