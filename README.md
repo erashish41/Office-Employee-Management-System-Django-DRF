@@ -10,7 +10,7 @@ Office Employee Management System with Core Python, Django, and Django REST Fram
 - Environment: Virtual Environment (venv)
 
 
-# Step to do for Djanog DRF project : 
+# Step to do for Djanog DRF project: 
 - Follow these steps to set up and run your Django DRF project successfully
 - Make sure Python is installed: python --version
 - If not, download it from https://www.python.org/downloads/
